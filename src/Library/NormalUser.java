@@ -37,6 +37,6 @@ public class NormalUser extends User{
     }
 
     public String toString() {
-        return getName() + "<N/>" + getEmail() + "<N/>" + getPhoneNumber() + "<N/>"+"Normal User";
+        return name+"<N/>"+email+"<N/>"+phoneNumber+"<N/>"+"Normal";
     }
 }

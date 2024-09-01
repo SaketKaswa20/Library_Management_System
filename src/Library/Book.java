@@ -1,20 +1,18 @@
 package Library;
 
-import java.util.ArrayList;
-
 public class Book {
     private String name;
     private String author;
     private String publisher;
     private String address; //Collection location
     private String status;
-    private String quantity;
+    private int quantity;
     private double price;
     private int borrowedCopies;
 
     public Book(){};
 
-    public Book(String name, String author, String publisher, String address, String status, String quantity, double price, int borrowedCopies) {
+    public Book(String name, String author, String publisher, String address, String status, int quantity, double price, int borrowedCopies) {
         this.name = name;
         this.author = author;
         this.publisher = publisher;
@@ -25,15 +23,14 @@ public class Book {
         this.borrowedCopies = borrowedCopies;
     }
 
-    public String toString(){
-        String text= "Library.Book Name: " + name +
-                "Library.Book Author: " + author +
-                "Library.Book Publisher: " + publisher +
-                "Library.Book Collection Address: " + address +
-                "Library.Book Status: " + status +
-                "Library.Book Quantity: " + String.valueOf(quantity) +
-                "Library.Book Price: " + String.valueOf(price) +
-                "Library.Book Borrowed Copies: " + String.valueOf(borrowedCopies);
+    public String toString() {
+        String text = "Book Name: " +name+"\n" +
+        "Book Author: " + author+"\n"+
+                "Book Publisher: " + publisher+"\n"+
+                "Book Collection Adress: " + address+"\n"+
+                "Qty: " + String.valueOf(quantity)+"\n"+
+                "Price: " + String.valueOf(price)+"\n"+
+                "Borrowing Copies: " + String.valueOf(borrowedCopies);
         return text;
     }
 
@@ -77,11 +74,11 @@ public class Book {
         this.status = status;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
@@ -100,4 +97,10 @@ public class Book {
     public void setBorrowedCopies(int borrowedCopies) {
         this.borrowedCopies = borrowedCopies;
     }
+
+    public String toString2(){
+        String text= name+"<N/>"+author+"<N/>"+publisher+"<N/>"+address+"<N/>"+String.valueOf(quantity)+
+                "<N/>"+String.valueOf(price)+"<N/>"+String.valueOf(borrowedCopies);
+        return text;
+    };
 }

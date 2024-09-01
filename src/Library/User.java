@@ -1,9 +1,9 @@
 package Library;
 
 public abstract class User {
-    private String name;
-    private String email;
-    private String phoneNumber;
+    protected String name;
+    protected String email;
+    protected String phoneNumber;
     protected IOOperation[] operations;
 
     public User() {};

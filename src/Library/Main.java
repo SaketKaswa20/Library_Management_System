@@ -41,9 +41,8 @@ public class Main {
         if (n!=-1) {
             User user= database.getUser(n);
             user.userMenu(database, user);
-            System.out.println("Welcome "+ user.getName());
         }else {
-            System.out.println("Library.User doesn't exist");
+            System.out.println("User doesn't exist");
         }
     }
 
@@ -55,13 +54,13 @@ public class Main {
         System.out.print("Enter Email Address: ");
         String email=input.next();
 
-        System.out.println("1. Library.Admin\n2. Normal Library.User");
+        System.out.println("1. Admin\n2. Normal User");
         int choice2=input.nextInt();
         User user;
         if (choice2==1) {
-            user=new Admin(username,phone,email);
+            user=new Admin(username,email,phone);
         }else{
-            user=new NormalUser(username,phone,email);
+            user=new NormalUser(username,email,phone);
         }
         database.AddUser(user);
         user.userMenu(database, user);
