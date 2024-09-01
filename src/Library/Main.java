@@ -1,3 +1,5 @@
+package Library;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +11,7 @@ public class Main {
         System.out.println("Welcome to Library Management System!");
         int choice1;
 
-        do{
+//        do{
             System.out.println("\n"
                     +"0. Exit\n"
                     + "1. Login\n2. New User");
@@ -27,7 +29,7 @@ public class Main {
                 default:
                     System.out.println("Exited!");
             }
-            }while (choice1!=0);
+//            }while (choice1!=0);
     }
 
     private static void login() {
@@ -38,10 +40,10 @@ public class Main {
         int n= database.login(phone, email);
         if (n!=-1) {
             User user= database.getUser(n);
-            user.userMenu();
+            user.userMenu(database, user);
             System.out.println("Welcome "+ user.getName());
         }else {
-            System.out.println("User doesn't exist");
+            System.out.println("Library.User doesn't exist");
         }
     }
 
@@ -53,7 +55,7 @@ public class Main {
         System.out.print("Enter Email Address: ");
         String email=input.next();
 
-        System.out.println("1. Admin\n2. Normal User");
+        System.out.println("1. Library.Admin\n2. Normal Library.User");
         int choice2=input.nextInt();
         User user;
         if (choice2==1) {
@@ -62,7 +64,7 @@ public class Main {
             user=new NormalUser(username,phone,email);
         }
         database.AddUser(user);
-        user.userMenu();
-        System.out.println("New User created");
+        user.userMenu(database, user);
+//        System.out.println("New Library.User created");
     }
 }

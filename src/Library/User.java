@@ -1,7 +1,10 @@
-public class User {
+package Library;
+
+public abstract class User {
     private String name;
     private String email;
     private String phoneNumber;
+    protected IOOperation[] operations;
 
     public User() {};
 
@@ -28,6 +31,8 @@ public class User {
         return phoneNumber;
     }
 
-    abstract public void userMenu();
+    abstract public String toString();
+
+    abstract public void userMenu(Database database, User user);
 }
 
