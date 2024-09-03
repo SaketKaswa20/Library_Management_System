@@ -6,6 +6,8 @@ public class Order {
     private double price;
     private int qty;
 
+    public Order() {};
+
     public Order (Book book, User user, double price, int qty) {
         this.book= book;
         this.user = user;

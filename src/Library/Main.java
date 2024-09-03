@@ -10,8 +10,6 @@ public class Main {
         database = new Database();
         System.out.println("Welcome to Library Management System!");
         int choice1;
-
-//        do{
             System.out.println("\n"
                     +"0. Exit\n"
                     + "1. Login\n2. New User");
@@ -29,7 +27,6 @@ public class Main {
                 default:
                     System.out.println("Exited!");
             }
-//            }while (choice1!=0);
     }
 
     private static void login() {
@@ -49,6 +46,10 @@ public class Main {
     private static void newUser(){
         System.out.print("Enter Username: ");
         String username=input.next();
+        if (database.userExists(username)){
+            System.out.println("User already exists");
+            newUser();
+        }
         System.out.print("Enter Phone Number: ");
         String phone=input.next();
         System.out.print("Enter Email Address: ");
@@ -64,6 +65,5 @@ public class Main {
         }
         database.AddUser(user);
         user.userMenu(database, user);
-//        System.out.println("New Library.User created");
     }
 }
