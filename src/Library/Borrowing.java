@@ -11,7 +11,7 @@ public class Borrowing {
     Book book;
     User user;
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public Borrowing(Book book, User user) {
         start = LocalDate.now();
@@ -61,9 +61,9 @@ public class Borrowing {
         return "Borrowing time: "+start+"\nExpiry Date: "+ finish+ "\nDays left: "+daysleft;
     }
 
-    public String toString2(){
-        return getStart()+"‹N/›"+getFinish()+"‹N/›"+getDaysLeft()+"‹N/›"+book.getName()+"‹N/›"+
-        user.getName()+"‹N/>";
+    public String toString2() {
+        return getStart()+"<N/>"+getFinish()+"<N/>"+getDaysLeft()+"<N/>"+book.getName()+"<N/>"+
+                user.getName()+"<N/>";
     }
 
 }

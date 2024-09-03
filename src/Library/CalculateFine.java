@@ -13,7 +13,7 @@ public class CalculateFine implements IOOperation {
 
         for (Borrowing borrowing: database.getAllBorrowings()){
             if (borrowing.getBook().getName().matches(bookname) && borrowing.getUser().getName().matches(user.getName())){
-                if (borrowing.getDaysLeft()<0){
+                if (borrowing.getDaysLeft()>0){
                     System.out.println("You are late!" + "You have to pay $" + Math.abs(borrowing.getDaysLeft()*50)+ "as fine");
                 } else {
                     System.out.println("You don't have to pay fine\n");
